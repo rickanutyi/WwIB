@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 .play__music {
@@ -74,7 +76,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgb(39, 36, 36);
-  background-image: url("../assets/images/eva3.jpg");
+  background-image: url("../assets/images/eva4.jpg");
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -160,7 +162,104 @@
 }
 .closed .left__side {
   transform: translate(-100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.first__section .left__side .left__card {
+  width: 400px;
+  height: 500px;
+  border: 3px solid #fff;
+  /* animation-name: redBorder;
+  animation-duration: 2s;
+  animation-delay: 11s;
+  animation-fill-mode: forwards; */
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* .first__section .left__side .white__border .left__card {
+  animation-name: whiteBorder;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  border: 3px solid #fff;
+} */
+
+.left__side .left__card .card__image {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.left__card .card__image img {
+  max-width: 100%;
+  display: block;
+}
+
+.left__card .card__image::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  animation-name: redImage;
+  animation-duration: 1s;
+  animation-delay: 12s;
+  animation-fill-mode: forwards;
+  background-color: rgba(124, 5, 5, 0.2);
+  z-index: 2;
+}
+
+@keyframes redImage {
+  0% {
+    top: -100%;
+    bottom: 100%;
+  }
+  100% {
+    top: 0;
+    bottom: 0;
+  }
+}
+
+@keyframes redBorder {
+  0% {
+    border: 3px solid #fff;
+  }
+  100% {
+    border: 3px solid rgba(160, 0, 0, 2);
+  }
+}
+
+@keyframes whiteBorder {
+  0% {
+    border: 3px solid red;
+  }
+  100% {
+    border: 3px solid #fff;
+  }
+}
+
+.left__card .about {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  height: auto;
+  padding: 20px 0px;
+  /* -webkit-text-stroke: 1px rgb(255, 255, 255); */
+  font-size: 35px;
+}
+
+.about p span {
+  font-size: 40px;
+  color: rgb(255, 255, 0);
+}
+
 .closed .right__side {
   transform: translate(100%);
 }
