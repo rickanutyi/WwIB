@@ -14,9 +14,13 @@ let mangaList = [
     name: "Меланхолия Харухи Судзумии",
     img: "./assets/images/anime/меланхолия.jpg",
   },
-  { name: "Блич", img: "./assets/images/manga/bleach.jpeg" },
+  { name: "Паприка", img: "./assets/images/anime/paprika.jpeg" },
 ];
-let bookList = [{ name: "", img: "./assets/images/eva2.jpg" }];
+//
+let bookList = [
+  { name: "", img: "./assets/images/eva2.jpg" },
+  { name: "", img: "./assets/images/eva2.jpg" },
+];
 let movieList = [
   {
     name: "Бегущий по лезвию",
@@ -26,7 +30,6 @@ let movieList = [
 let projectList = [{ name: "shop", img: "./assets/images/eva4.jpg" }];
 
 hobby1.onclick = function () {
-  hobbyWall.innerHTML = "";
   showHobby(mangaList);
 
   hobby1.classList.add("active");
@@ -35,7 +38,6 @@ hobby1.onclick = function () {
   hobby4.classList.remove("active");
 };
 hobby2.onclick = function () {
-  hobbyWall.innerHTML = "";
   showHobby(movieList);
   hobby1.classList.remove("active");
   hobby2.classList.add("active");
@@ -43,7 +45,6 @@ hobby2.onclick = function () {
   hobby4.classList.remove("active");
 };
 hobby3.onclick = function () {
-  hobbyWall.innerHTML = "";
   showHobby(bookList);
   hobby1.classList.remove("active");
   hobby2.classList.remove("active");
@@ -51,7 +52,6 @@ hobby3.onclick = function () {
   hobby4.classList.remove("active");
 };
 hobby4.onclick = function () {
-  hobbyWall.innerHTML = "";
   showHobby(projectList);
   hobby1.classList.remove("active");
   hobby2.classList.remove("active");
@@ -61,12 +61,20 @@ hobby4.onclick = function () {
 
 function showHobby(hobbyList) {
   hobbyWall.innerHTML = "";
+  hobbyWall.style.justifyContent = "space-between";
+
   hobbyList.forEach((element, index) => {
+    let elem = document.createElement("div");
+
+    elem.classList.add("list__element");
+    elem.innerHTML = `<img src='${element.img}'><span>${element.name}</span>`;
+    hobbyWall.append(elem);
+  });
+
+  let listElem = document.querySelectorAll(".list__element");
+  listElem.forEach((item, index) => {
     setTimeout(() => {
-      let elem = document.createElement("div");
-      elem.classList.add("list__element");
-      elem.innerHTML = `<img src='${element.img}'><span>${element.name}</span>`;
-      hobbyWall.append(elem);
-    }, index * 200);
+      item.classList.add("list__element__up");
+    }, index * 100);
   });
 }

@@ -435,9 +435,10 @@
 
 .second__section .section__bottom {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: 20px;
   padding: 50px;
+  flex-wrap: wrap;
 }
 .second__section .section__bottom {
   animation-name: closeBottom;
@@ -447,11 +448,18 @@
   background-color: rgb(0, 0, 0);
 }
 
-.second__section .section__bottom .list__element {
+.section__bottom .list__element {
   width: 200px;
   height: 200px;
   position: relative;
   overflow: hidden;
+  box-shadow: 1px 1px 30px #fff;
+  top: 1000px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.second__section .section__bottom .list__element__up {
   animation-name: showHobby;
   animation-duration: 1s;
   animation-fill-mode: forwards;
