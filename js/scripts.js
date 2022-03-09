@@ -228,7 +228,16 @@ const roundMouse = document.getElementById("round__mouse");
 //   blackBg.classList.remove("black__fon");
 // };
 
+function clearWall() {
+  hobbyWall.innerHTML = "";
+  hobby1.classList.remove("active");
+  hobby2.classList.remove("active");
+  hobby3.classList.remove("active");
+  hobby4.classList.remove("active");
+}
+
 section1.onwheel = function (event) {
+  clearWall();
   if (event.deltaY > 0) {
     section1.classList.remove("first__section");
     section2.classList.add("second__section");
@@ -238,6 +247,7 @@ section1.onwheel = function (event) {
   }
 };
 section2.onwheel = function (event) {
+  clearWall();
   if (event.deltaY > 0) {
     section3.classList.add("third__section");
     section2.classList.remove("second__section");
@@ -247,6 +257,7 @@ section2.onwheel = function (event) {
   }
 };
 section3.onwheel = function (event) {
+  clearWall();
   if (event.deltaY > 0) {
     section3.classList.remove("third__section");
     section4.classList.add("fourth__section");
@@ -257,6 +268,7 @@ section3.onwheel = function (event) {
 };
 
 section4.onwheel = function (event) {
+  clearWall();
   if (event.deltaY > 0) {
     section4.classList.remove("fourth__section");
     section1.classList.add("first__section");
