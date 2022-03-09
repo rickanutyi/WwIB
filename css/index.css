@@ -372,6 +372,51 @@
   max-width: 100%;
   height: 60%;
   background-color: rgba(67, 1, 70, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 10px 60px 10px 60px;
+  flex-wrap: wrap;
+  position: relative;
+  /* overflow: scroll; */
+}
+.second__section .section__bottom {
+  animation-name: closeBottom;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
+.section__bottom .next__list__btn {
+  position: absolute;
+  /* width: 40px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none; */
+  border: 30px solid transparent;
+  border-left: 50px solid rgba(255, 255, 255, 0.4);
+  right: 10px;
+  transition: 200ms ease;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.section__bottom .next__list__btn:hover {
+  border-left: 50px solid rgba(255, 255, 255, 1);
+}
+
+.section__bottom .prev__list__btn {
+  position: absolute;
+  border: 30px solid transparent;
+  border-right: 50px solid rgba(255, 255, 255, 0.4);
+  left: 10px;
+  transition: 200ms ease;
+  background-color: transparent;
+  cursor: pointer;
+}
+.section__bottom .prev__list__btn:hover {
+  border-right: 50px solid rgba(255, 255, 255, 1);
 }
 
 /* .closed .section__top {
@@ -389,15 +434,16 @@
 }
 
 .section__top .top__info {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 .top__info h2 {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 900;
   line-height: 4rem;
   -webkit-text-stroke: 1px #fff;
@@ -406,7 +452,8 @@
 
 .top__info .hobbies {
   width: 100%;
-  height: 300px;
+  height: 100%;
+  /* height: 300px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -417,7 +464,7 @@
 
 .hobbies .hobby {
   width: 200px;
-  height: 200px;
+  height: 60px;
   border: 1px solid #fff;
   border-radius: 20px;
   transition: all 200ms ease;
@@ -438,21 +485,6 @@
   background-color: #fff;
   color: rgb(0, 0, 0);
   box-shadow: 1px 1px 20px #fff;
-}
-
-.second__section .section__bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 50px;
-  flex-wrap: wrap;
-}
-.second__section .section__bottom {
-  animation-name: closeBottom;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in;
-  /* background-color: rgb(0, 0, 0); */
 }
 
 .section__bottom .list__element {
