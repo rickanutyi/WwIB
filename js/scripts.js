@@ -3,10 +3,6 @@ const round1 = document.getElementById("music__round").style;
 const audio1 = document.getElementById("audio");
 const play1 = document.getElementById("play");
 
-// const round2 = document.getElementById("music__round2").style;
-// const audio2 = document.getElementById("audio2");
-// const play2 = document.getElementById("play2");
-
 play1.onclick = () => {
   if (audio1.paused) {
     startPlay(round1, audio1, play1);
@@ -54,7 +50,6 @@ function startPlay(round, audio, play) {
 //white theme
 
 const sun = document.getElementById("sun");
-const leftCard = document.getElementById("left__card");
 
 // sun.onclick = function () {
 //   leftCard.style.border = "3px solid red";
@@ -79,7 +74,7 @@ const section4 = document.getElementById("section4");
 
   let particles = [];
   let properties = {
-    bgColor: "rgba(17,17,17,1)",
+    bgColor: "rgba(0,0,0,1)",
     particleColor: "rgba(255,255,0,1)",
     particleRadius: 3,
     particleCount: 100,
@@ -92,6 +87,7 @@ const section4 = document.getElementById("section4");
     properties.particleColor = "rgba(255,40,40,1)";
   }, 10000);
 
+  function changeColor() {}
   document.getElementById("right__side").appendChild(canvas);
 
   window.onresize = function () {
@@ -208,6 +204,29 @@ const section4 = document.getElementById("section4");
 })();
 
 // !ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+
+//card animation
+const leftCard = document.getElementById("left__card");
+const roundMouse = document.getElementById("round__mouse");
+
+// leftCard.onmousemove = function (event) {
+//   roundMouse.style.opacity = "1";
+//   roundMouse.style.top = `${event.clientY - 68}px`;
+//   roundMouse.style.left = `${event.clientX - 265}px`;
+//   // console.log(leftCard);
+//   console.log(event.clientY);
+// };
+// leftCard.onmouseleave = function (event) {
+//   setTimeout(() => {
+//     roundMouse.style.opacity = "0";
+//   }, 1000);
+// };
+// leftCard.onmouseover = function () {
+//   blackBg.classList.add("black__fon");
+// };
+// leftCard.onmouseleave = function () {
+//   blackBg.classList.remove("black__fon");
+// };
 
 section1.onwheel = function (event) {
   if (event.deltaY > 0) {

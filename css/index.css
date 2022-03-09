@@ -52,6 +52,7 @@
   justify-content: center;
   align-items: center;
   gap: 5px;
+  /* overflow: hidden; */
 }
 .social__icon {
   /* fill: #fff; */
@@ -66,11 +67,41 @@
   fill: #fff;
   /* stroke: #000000; */
 }
-/* .social__icon .gmail {
-  fill: #fff;
-  stroke: none;
-} */
 
+.social__icon .gmail {
+  position: relative;
+}
+
+.gmail__text {
+  position: relative;
+}
+
+.gmail__text::after {
+  content: "erachynybaev@gmail.com";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -340px;
+
+  width: 300px;
+  background-color: transparent;
+  z-index: 22;
+
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  opacity: 0;
+  transition: 200ms ease;
+}
+
+.gmail__text:hover::after {
+  right: 55px;
+  opacity: 1;
+}
 /* sections */
 .wrapper {
   width: 100vw;
@@ -176,16 +207,29 @@
   animation-delay: 11s;
   animation-fill-mode: forwards; */
   background-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-/* .first__section .left__side .white__border .left__card {
-  animation-name: whiteBorder;
-  animation-duration: 2s;
-  animation-delay: 0s;
-  animation-fill-mode: forwards;
-  border: 3px solid #fff;
-} */
+.round__mouse {
+  position: absolute;
+  top: -100%;
+  width: 100px;
+  height: 100px;
+  border: 2px solid yellow;
+  border-radius: 50%;
+  box-shadow: 10px -10px 100px black, 10px -10px 200px black,
+    10px -10px 300px black, 10px -10px 600px black, 10px -10px 1000px black;
+}
 
+/* .left__card:hover .black__fon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+} */
 .left__side .left__card .card__image {
   max-width: 100%;
   position: relative;
@@ -197,7 +241,7 @@
   display: block;
 }
 
-.left__card .card__image::after {
+.first__section .left__side .left__card .card__image::after {
   content: "";
   position: absolute;
   top: -100%;
@@ -260,6 +304,10 @@
   color: rgb(255, 255, 0);
 }
 
+.about p span:hover {
+  transform: scale(2);
+}
+
 .closed .right__side {
   transform: translate(100%);
 }
@@ -320,12 +368,12 @@
   background-color: rgb(98, 3, 82);
 }
 
-.closed .section__top {
+/* .closed .section__top {
   transform: translateY(-100%);
 }
 .closed .section__bottom {
   transform: translateY(100%);
-}
+} */
 
 .second__section .section__top {
   animation-name: closeTop;
@@ -334,11 +382,58 @@
   animation-timing-function: ease-in;
 }
 
+.section__top .top__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.top__info h2 {
+  font-size: 5rem;
+  font-weight: 900;
+  -webkit-text-stroke: 1px #fff;
+  color: transparent;
+}
+
+.top__info .hobbies {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  /* border: 1px solid red; */
+  position: relative;
+}
+
+.hobbies .hobby {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  transition: all 200ms ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.hobbies .hobby:hover {
+  background-color: #fff;
+  color: rgb(0, 0, 0);
+  box-shadow: 1px 1px 20px #fff;
+}
 .second__section .section__bottom {
   animation-name: closeBottom;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
+  background-color: rgb(0, 0, 0);
 }
 
 @keyframes closeTop {
