@@ -241,6 +241,7 @@ section1.onwheel = function (event) {
   if (event.deltaY > 0) {
     section1.classList.remove("first__section");
     section2.classList.add("second__section");
+    initialList();
   } else {
     section1.classList.remove("first__section");
     section4.classList.add("fourth__section");
@@ -262,6 +263,7 @@ section3.onwheel = function (event) {
     section3.classList.remove("third__section");
     section4.classList.add("fourth__section");
   } else {
+    initialList();
     section2.classList.add("second__section");
     section3.classList.remove("third__section");
   }

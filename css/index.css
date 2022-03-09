@@ -79,9 +79,9 @@
 .gmail__text::after {
   content: "erachynybaev@gmail.com";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: -340px;
+  top: -1000px;
+  bottom: 1000px;
+  right: 65px;
 
   width: 300px;
   background-color: transparent;
@@ -99,7 +99,8 @@
 }
 
 .gmail__text:hover::after {
-  right: 55px;
+  top: 0;
+  bottom: 0;
   opacity: 1;
 }
 /* sections */
@@ -361,11 +362,16 @@
   overflow: hidden;
 }
 
-.second__section .section__top,
+.second__section .section__top {
+  max-width: 100%;
+  height: 40%;
+  background-color: rgba(67, 1, 70, 0.7);
+}
+
 .second__section .section__bottom {
   max-width: 100%;
-  height: 50%;
-  background-color: rgb(98, 3, 82);
+  height: 60%;
+  background-color: rgba(67, 1, 70, 0.7);
 }
 
 /* .closed .section__top {
@@ -393,6 +399,7 @@
 .top__info h2 {
   font-size: 5rem;
   font-weight: 900;
+  line-height: 4rem;
   -webkit-text-stroke: 1px #fff;
   color: transparent;
 }
@@ -436,7 +443,7 @@
 .second__section .section__bottom {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
   padding: 50px;
   flex-wrap: wrap;
 }
@@ -445,7 +452,7 @@
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in;
-  background-color: rgb(0, 0, 0);
+  /* background-color: rgb(0, 0, 0); */
 }
 
 .section__bottom .list__element {
@@ -542,7 +549,7 @@
   height: 100%;
   position: absolute;
   overflow: hidden;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* fourth section */
@@ -551,5 +558,5 @@
   height: 100%;
   position: absolute;
   overflow: hidden;
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.5);
 }

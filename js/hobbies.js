@@ -5,7 +5,7 @@ const hobby4 = document.getElementById("hobby4");
 
 const hobbyWall = document.getElementById("section2__bottom");
 
-let mangaList = [
+let animeList = [
   { name: "Евангелион", img: "./assets/images/anime/evang.png" },
   { name: "Принцесса Мононоке", img: "./assets/images/anime/mononoke.jpg" },
   { name: "Ловцы забытых голосов", img: "./assets/images/anime/ловцы.jpg" },
@@ -21,16 +21,18 @@ let bookList = [
   { name: "", img: "./assets/images/eva2.jpg" },
   { name: "", img: "./assets/images/eva2.jpg" },
 ];
+//
 let movieList = [
   {
     name: "Бегущий по лезвию",
     img: "./assets/images/movie/бегущий-по-лезвию.jpg",
   },
 ];
+//
 let projectList = [{ name: "shop", img: "./assets/images/eva4.jpg" }];
 
 hobby1.onclick = function () {
-  showHobby(mangaList);
+  showHobby(animeList);
 
   hobby1.classList.add("active");
   hobby2.classList.remove("active");
@@ -39,6 +41,7 @@ hobby1.onclick = function () {
 };
 hobby2.onclick = function () {
   showHobby(movieList);
+
   hobby1.classList.remove("active");
   hobby2.classList.add("active");
   hobby3.classList.remove("active");
@@ -46,6 +49,7 @@ hobby2.onclick = function () {
 };
 hobby3.onclick = function () {
   showHobby(bookList);
+
   hobby1.classList.remove("active");
   hobby2.classList.remove("active");
   hobby3.classList.add("active");
@@ -53,6 +57,7 @@ hobby3.onclick = function () {
 };
 hobby4.onclick = function () {
   showHobby(projectList);
+
   hobby1.classList.remove("active");
   hobby2.classList.remove("active");
   hobby3.classList.remove("active");
@@ -61,7 +66,12 @@ hobby4.onclick = function () {
 
 function showHobby(hobbyList) {
   hobbyWall.innerHTML = "";
-  hobbyWall.style.justifyContent = "space-between";
+
+  if (hobbyList.length < 4) {
+    hobbyWall.style.justifyContent = "flex-start";
+  } else {
+    hobbyWall.style.justifyContent = "space-between";
+  }
 
   hobbyList.forEach((element, index) => {
     let elem = document.createElement("div");
@@ -77,4 +87,12 @@ function showHobby(hobbyList) {
       item.classList.add("list__element__up");
     }, index * 100);
   });
+}
+function initialList() {
+  showHobby(animeList);
+
+  hobby1.classList.add("active");
+  hobby2.classList.remove("active");
+  hobby3.classList.remove("active");
+  hobby4.classList.remove("active");
 }
